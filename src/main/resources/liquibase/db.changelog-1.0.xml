@@ -97,7 +97,7 @@
                 <constraints nullable="false"/>
             </column>
 
-            <column name="price" type="VARCHAR">
+            <column name="price" type="INT">
                 <constraints nullable="false"/>
             </column>
 
@@ -266,6 +266,33 @@
 
         </createTable>
     </changeSet>
+
+    <changeSet id="1.0.17" author="maxim.blinov">
+        <createTable tableName="tags">
+
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="name" type="VARCHAR(100)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="1.0.18" author="maxim.blinov">
+        <createTable tableName="cours_tags">
+
+            <column name="cours_id" type="BIGINT"/>
+
+
+            <column name="tags_id" type="BIGINT"/>
+
+
+        </createTable>
+    </changeSet>
+
 
     <!--lien-->
 
